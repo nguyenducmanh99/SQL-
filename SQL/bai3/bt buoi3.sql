@@ -46,7 +46,7 @@ WHERE ACCOUNT_ID AND Department_ID ;
 -- Cau 11 Viết lệnh để lấy ra danh sách các phòng ban có >2 nhân viên
  SELECT * , COUNT(A.ACCOUNT_ID)
  FROM  `Account` A
- INNER JOIN Department D on A.Department_ID = B.Department_ID
+ INNER JOIN Department D on A.Department_ID = D.Department_ID
  GROUP BY D.Department_ID 
  HAVING COUNT(A.ACCOUNT_ID ) >2 ;
  
@@ -54,17 +54,7 @@ WHERE ACCOUNT_ID AND Department_ID ;
  
 
  
- -- Tao View 
- -- Tạo view có chứa danh sách nhân viên thuộc phòng ban Test
- CREATE VIEW `list test` AS
- SELECT 		A.ACCOUNT_ID,A.EMAIL,A.FullName
- FROM  			Department D
- JOIN		 `Account`A ON D.Department_ID = A.Department_ID
- WHERE			 D.Department_Name = 'Test' ;
- 
- SELECT* 
- FROM `list test`;
- 
+
  
  
  
