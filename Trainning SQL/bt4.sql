@@ -55,4 +55,12 @@ SELECT * , COUNT(A.ACCOUNT_ID)
 
 -- Cau 5 Tạo view có chứa tất các các câu hỏi do user họ Nguyễn tạo		
  
-
+  DROP VIEW `NGUYEN` ;
+  
+ CREATE VIEW `NGUYEN` AS 
+ SELECT QuestionID
+ FROM  Question Q
+ INNER JOIN `Account`A  ON A.ACCOUNT_ID = Q.CreatorID
+ WHERE FullName LIKE 'NGUYEN%' ;
+ 
+ 

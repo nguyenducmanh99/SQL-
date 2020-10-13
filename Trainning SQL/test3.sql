@@ -24,6 +24,7 @@ FullName            VARCHAR(50) NOT NULL ,
 Department_ID       TINYINT UNSIGNED,
 Position_ID  		TINYINT UNSIGNED,
 CreateDate          DATETIME NOT NULL DEFAULT NOW(),
+
 FOREIGN KEY (Department_ID) REFERENCES  Department (Department_ID),
 FOREIGN KEY (Position_ID) REFERENCES   Position (Position_ID )
 );
@@ -39,9 +40,9 @@ Creatdate 	      	 DATETIME NOT NULL DEFAULT NOW()
 -- Tạo bảng 5		GroupAccount
 CREATE TABLE GroupAccount (  
 GroupID           TINYINT UNSIGNED ,
-ACCOUNTID         TINYINT UNSIGNED,
+ACCOUNT_ID         TINYINT UNSIGNED,
 JOINDATE           DATETIME NOT NULL DEFAULT NOW() ,
-PRIMARY KEY (GROUPID, ACCOUNTID)
+PRIMARY KEY (GROUPID, ACCOUNT_ID)
 );
 
 -- Tạo bảng 6 		TypeQuestion
